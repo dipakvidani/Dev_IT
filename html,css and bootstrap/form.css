@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 30px;
+}
+
+section#form {
+    background: #fff;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px 25px 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #34495e;
+    font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="date"],
+form input[type="file"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 14px;
+    border: 1px solid #bfc9d1;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    margin-right: 6px;
+    margin-left: 2px;
+}
+
+form input[type="range"] {
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+form input[type="submit"] {
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+form input[type="submit"]:hover {
+    background: #34495e;
+}
+
+form p {
+    margin: 0 0 8px 0;
+}
+
+/* label of check box and radio button is must not be inline-block */
+
+form input[type="radio"] + label,
+form input[type="checkbox"] + label {
+    display: inline;
+}
