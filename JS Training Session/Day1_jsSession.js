@@ -218,23 +218,23 @@
 // //         console.log(number_of_day, "Day is Monday");
 // //         break;
 
-// //     case 1:
+// //     case 2:
 // //         console.log(number_of_day, "Day is Tuesday");
 // //         break;
 
-// //     case 1:
+// //     case 3:
 // //         console.log(number_of_day, "Day is Wednesdayx");
 // //         break;
 
-// //     case 1:
+// //     case 4:
 // //         console.log(number_of_day, "Day is Thursday");
 // //         break;
 
-// //     case 1:
+// //     case 5:
 // //         console.log(number_of_day, "Day is Friday");
 // //         break;
 
-// //     case 1:
+// //     case 6:
 // //         console.log(number_of_day, "Day is Saturday");
 // //         break;
 
