@@ -83,13 +83,19 @@ let Number_for_check_odd_even = 5;
   console.log(`${Number_for_check_odd_even} is odd`);
 ;
 
+// let array = ["even", "odd"];
+// let numbercheck = 10;
+
+// console.log(array[numbercheck % 2]);
 
 // Q2 From a given string find the frequency of each character inside of the string
 function CountCharFrequency(name) {
   let frequancy_count = {};
+  let CapitalizeName=name.toLowerCase();
 
-  for (let i = 0; i < name.length; i++) {
-    let char = name[i];
+  for (let i = 0; i < CapitalizeName.length; i++) {
+    let char = CapitalizeName[i];
+    if (char == " ") continue;
     if (frequancy_count[char]) {
       frequancy_count[char]++;
     } else {
@@ -99,4 +105,35 @@ function CountCharFrequency(name) {
   return frequancy_count;
 }
 
-console.log(CountCharFrequency("shashwat"));
+console.log(CountCharFrequency("Shashwat"));
+
+function isNameIsTrimed(input) {
+  let regex = /^\S(.*\S)?$/;
+  return regex.test(input);
+}
+
+
+console.log(isNameIsTrimed("Dipak Vidani"));
+
+
+function isValidEmailFormat(EMAIL) {
+  let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(EMAIL);
+}
+
+isValidEmailFormat("dipak@gmail.com")
+
+function isMobileNumber(Number) {
+  let regex = /^[0-9]{10}$/;
+  return regex.test(Number);
+}
+
+console.log(isMobileNumber("0000000000") + " Number");
+
+function isPasswordStrong(Password) {
+  let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\d)(?=.*[\W_]).{8,}$/;
+  return regex.test(Password);
+}
+
+console.log(isPasswordStrong("0000000000") + " Strong Password");
+
