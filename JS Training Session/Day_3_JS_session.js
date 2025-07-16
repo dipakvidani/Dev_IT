@@ -20,10 +20,13 @@ console.log(buffer);
 const view = new DataView(buffer);
 console.log(view);
 
-view.setInt32(0, 100);  //setInt(offset,number_to_add)
+// view.setInt32(0, 100);  //setInt(offset,number_to_add)
+// view.setInt32(0, 100);  //setInt(offset,number_to_add)
+// view.setInt32(0, 100);  //setInt(offset,number_to_add)
+view.setInt32(4, 100);  //setInt(offset,number_to_add)
 console.log(view);
 
-const value = view.getInt32(0);   //getInt(offset)
+const value = view.getInt32(5);   //getInt(offset)
 
 console.log(value);
 
@@ -41,6 +44,11 @@ console.log(value);
 // const btn2 = document
 //   .getElementById("txt")
 //   .addEventListener("keypress", function () {
+//     console.log("Key pressed");
+//   }); 
+// const btn2 = document
+//   .getElementById("txt")
+//   .addEventListener("dblclick", function () {
 //     console.log("Key pressed");
 //   }); 
 
@@ -115,13 +123,19 @@ function isNameIsTrimed(input) {
 
 console.log(isNameIsTrimed("Dipak Vidani"));
 
+//regex Email
+
 
 function isValidEmailFormat(EMAIL) {
   let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return regex.test(EMAIL);
+    return regex.test(EMAIL) ? "Email is valid" : "Email is invalid";
 }
 
-isValidEmailFormat("dipak@gmail.com")
+
+console.log(isValidEmailFormat("dipak@gmail.com"));
+
+
+//Regex Mobile Number
 
 function isMobileNumber(Number) {
   let regex = /^[0-9]{10}$/;
@@ -129,6 +143,8 @@ function isMobileNumber(Number) {
 }
 
 console.log(isMobileNumber("0000000000") + " Number");
+
+//Regex Password
 
 function isPasswordStrong(Password) {
   let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\d)(?=.*[\W_]).{8,}$/;

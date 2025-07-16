@@ -8,8 +8,16 @@ const Student = {
     Last_Name: "Vidani",
     age: 21,
     salary: "25,000",
-    isactive: true
+    isActive: true
 }
+
+console.log(Student.isActive ? "Student is active" : "Student is inactive");    //?? nullish oprator ---> allow null value
+console.log(Student.First_Name);
+console.log(Student.Last_Name);
+console.log(Student.age);
+console.log(Student.salary);
+
+
 
 // Q2 array of subject
 
@@ -33,7 +41,8 @@ const Student1 = {
     }
 }
 
-Student1.Fullname();
+console.log(Student1.Fullname());
+;
 
 //Q4 student is active with Bollean
 
@@ -51,7 +60,8 @@ const Student2 = {
     }
 }
 
-Student2.toggleStatus();
+console.log(Student2.toggleStatus());
+;
 
 //Q5 Display Current Date and Random
 
@@ -68,4 +78,5 @@ console.log(Math.floor(Math.random() * 10));
 
 
 //random number between 1 to 20
-console.log(Math.floor(Math.random(1,20) * 10));
+
+console.log(Math.floor(Math.random(1, 20) * 10));
