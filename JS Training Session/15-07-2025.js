@@ -62,25 +62,60 @@ console.log(Employee_Proxy);
 
 //see the method overriding & overloading
 
-//symbols
+//Q6 symbols
 
 let student = {
     name: "Dipak",
     age: 23,
-    enroll_number: 210430116079
+    enroll_number: 210430116079,
+    city: 'Botad',
 }
+
+let Student_Proxy = new Proxy(student, {
+    get(target, prop) {
+        if (prop in target) return Reflect.get(target, prop);
+        return false;
+    },
+    set(target, prop, value) {
+        if (!(prop in target)) throw new Error(`${prop} not exist in ${target}`);
+
+        switch (prop) {
+            case "name":
+            case "city":
+                if (typeof value == "string") {
+                    return Reflect.set(target, prop, value);
+                }
+
+                throw new Error(`Invalid Datatype of ${prop} it should be String`);
+
+
+            case "age": if (typeof value == "number") {
+                return Reflect.set(target, prop, value);
+            }
+                throw new Error(`Invalid Datatype of ${prop} it should be number`);
+
+
+            case "enroll_number": if (prop === lockedProp) {
+                throw new Error(`Property "${lockedProp}" is locked.`);
+            }
+                
+            case "id":if (prop === lockedPropInStudent) throw new Error(`Property "${lockedProp}" is locked.`);
+                return Reflect.set(target, prop, value);
+
+            default: return Reflect.set(target, prop, value);
+        }
+    }
+})
 
 let id = Symbol("id");
 
 student["id"] = 79;
 
-student.id = {
-    lockedProp: true
-}
+Object.defineProperty(student, "id", { configurable: false, writable: false });
 
-student["id"] = 10;
+student["id"]=65;
 
-console.log("Student ID : " + student[id]);
+console.log("Student ID : " + student["id"]);
 
 //Assignments
 
@@ -139,6 +174,7 @@ User["UserID"] = 1;
 
 
 console.log("User object with symbol name userID : ", User);
+
 
 
 //Browser Object Interaction
