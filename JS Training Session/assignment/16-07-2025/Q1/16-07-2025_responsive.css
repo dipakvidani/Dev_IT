@@ -1,0 +1,74 @@
+/* for large desktop (≥1200px) */
+.col-md-6 {
+    width: 50%;
+}
+
+form {
+    padding: 2.5rem; 
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.form-control,
+button {
+    font-size: 1rem;
+}
+
+/* for Laptops (992px to 1199px) */
+@media (max-width: 1199px) {
+    .col-md-6 {
+        width: 60%;
+    }
+
+    form {
+        padding: 1.8rem; 
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* for Tablets (768px to 991px) */
+@media (max-width: 991px) {
+    .col-md-6 {
+        width: 80%;
+    }
+
+    form {
+        padding: 1.5rem; 
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    .form-control,
+    button {
+        font-size: 0.95rem;
+    }
+}
+
+/* for Mobile phones (<768px) */
+@media (max-width: 767px) {
+    .col-md-6 {
+        width: 100%;
+        padding: 0 0.6rem; 
+    }
+
+    form {
+        padding: 1.25rem; 
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    .form-control,
+    button {
+        font-size: 0.9rem;
+    }
+}

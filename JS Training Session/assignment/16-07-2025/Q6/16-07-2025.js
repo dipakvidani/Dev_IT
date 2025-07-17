@@ -4,8 +4,6 @@
 //      1.3 Validate email
 //      1.4Alert success if all are valid
 
-
-
 function isNameValid(input) {
     let regex = /^[A-Za-z].{3,}$/;
     return regex.test(input);
