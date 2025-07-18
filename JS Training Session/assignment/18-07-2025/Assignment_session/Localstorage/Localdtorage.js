@@ -61,14 +61,51 @@ function isValueAvailabeInLocalStorage(key) {
   }
 }
 
-let keyForCheckKeyPresence="empId"
+let keyForCheckKeyPresence = "empId";
 
-isValueAvailabeInLocalStorage(keyForCheckKeyPresence)
-
+isValueAvailabeInLocalStorage(keyForCheckKeyPresence);
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Set full object or json into the 
+//Set full object or json into the LocalStorage
+
+let employee = {
+  emp_fName: "Dipak",
+  emp_lName: "Vidani",
+  emp_Id: "TDV 1002",
+  emp_designation: "Trainee",
+};
+
+//loop for set all itams from object
+for (const key in employee) {
+  setDetailsInLocalStorage(key, employee[key]);
+}
+
+let Devloper = {
+  Dev_fName: "Harsh",
+  Dev_lName: "Parmar",
+  Dev_Id: "THP 1002",
+  Dev_Skilles: ["Frontend", "Backend", "Fullstack"],
+};
+
+//loop for set all itams from object
+for (const key in Devloper) {
+  setDetailsInLocalStorage(key, Devloper[key]);
+}
+
 
 //CLEAR A WHOLE LOCAL STORAGE
-// localStorage.clear()
+localStorage.clear()
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    Query
+
+//function for get all iteams from LocalStorage
+// function getAllIteamsFromLocalStorage(_object) {
+    //   for (const key in _object) {
+        //     getDetailsFromLocalStorage(key, _object[key]);
+        //   }
+// }
+
+// getAllIteamsFromLocalStorage(Devloper)

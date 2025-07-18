@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      href="https:cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      href="https:cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
       rel="stylesheet"
     />
 
@@ -27,27 +27,148 @@
       <div class="row bg-dark p-5">
         <div class="col-1"></div>
         <div class="col-10">
-         <h3 class="text-center text-danger">
-            LocalStorage
-         </h3>
-         <ol>
+          <h3 class="text-center text-danger">LocalStorage</h3>
+          <ol>
             <li>SET IN LOCALSTORAGE</li>
             <li>GET FROM LOCALSTORAGE</li>
             <li>DELETE ONE ITEAM FROM LOCALSTORAGE</li>
             <li>DELETE WHOLE DATA LOCALSTORAGE</li>
             <li>STORE JSON OR FULL OBJECT ALL DETAILS INTO THE LOCALSTORAGE</li>
-         </ol>
+          </ol>
         </div>
         <div class="col-1"></div>
+      </div>
+    </section>
+
+    <section class="assignment-Query">
+      <div class="mt-5">
+        <div class="row g-0">
+          <div class="col">
+            <div id="query">
+              <pre class="bg-danger text-dark fw-bold">
+        <h1 class="text-center fw-bold text-primary shadow-sm">Query</h1>
+
+        function for get all iteams from LocalStorage
+         function getAllIteamsFromLocalStorage(_object) {
+               for (const key in _object) {
+                     getDetailsFromLocalStorage(key, _object[key]);
+                   }
+         }
+
+         getAllIteamsFromLocalStorage(Devloper)
+
+                </pre>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="assignment-answer">
       <div class="mt-5">
         <div class="row g-0">
-          <div class="col">
-           
+          <div class="col bg-primary text-light fw-bold p-3">
+            <h1 class="text-center text-warning bg-success">Answers</h1>
+            <pre>
+        Question 1:SET DETAILS IN LOCALSTORAGE
 
+         localStorage.setItem("company name", "Dev IT");
+
+         console.log(localStorage.getItem("companyName"));
+
+        function for store data in Localstorage
+        let setDetailsInLocalStorage = (key, value) => {
+        console.log(
+            `Adding one Data to Localstorage key is ${key} : value is ${value}`
+        );
+        localStorage.setItem(key, value);
+        };
+
+        function for get data from Localstorage
+        let getDetailsFromLocalStorage = (key) => {
+        console.log(`getting value of ${key} from Localstorage `);
+
+        return localStorage.getItem(key);
+        };
+
+        setDetailsInLocalStorage("empId", "TDV 1002");
+
+        let getTheValueofKey = "empId";
+
+        console.log(
+        `value of key ${getTheValueofKey} ` +
+            getDetailsFromLocalStorage(getTheValueofKey)
+        );
+
+         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        Remove one Data from the LocalStorage
+        let keyToDeleteFromlocalStorage = "empId";
+
+        console.log(`removing ${keyToDeleteFromlocalStorage} from Localstorage`);
+
+        localStorage.removeItem(keyToDeleteFromlocalStorage);
+
+        console.log(`after removing ${keyToDeleteFromlocalStorage} from Localstorage`);
+
+        console.log(
+        `get LocalStorage data after removing ${keyToDeleteFromlocalStorage} from Localstorage : ${getDetailsFromLocalStorage(
+            keyToDeleteFromlocalStorage
+        )}`
+        );
+
+        console.log(
+        `getDetailsFromLocalStorage(keyToDeleteFromlocalStorage):${getDetailsFromLocalStorage(
+            keyToDeleteFromlocalStorage
+        )}`
+        );
+
+        function isValueAvailabeInLocalStorage(key) {
+        if (getDetailsFromLocalStorage(key)) {
+            console.log(`${key} is available in LocalStorage...`);
+            return true;
+        } else {
+            console.log(`${key} is not available in LocalStorage...`);
+            return false;
+        }
+        }
+
+        let keyForCheckKeyPresence = "empId";
+
+        isValueAvailabeInLocalStorage(keyForCheckKeyPresence);
+
+         ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        Set full object or json into the LocalStorage
+
+        let employee = {
+        emp_fName: "Dipak",
+        emp_lName: "Vidani",
+        emp_Id: "TDV 1002",
+        emp_designation: "Trainee",
+        };
+
+        loop for set all itams from object
+        for (const key in employee) {
+        setDetailsInLocalStorage(key, employee[key]);
+        }
+
+        let Devloper = {
+        Dev_fName: "Harsh",
+        Dev_lName: "Parmar",
+        Dev_Id: "THP 1002",
+        Dev_Skilles: ["Frontend", "Backend", "Fullstack"],
+        };
+
+        loop for set all itams from object
+        for (const key in Devloper) {
+        setDetailsInLocalStorage(key, Devloper[key]);
+        }
+
+
+        CLEAR A WHOLE LOCAL STORAGE
+        localStorage.clear()
+            </pre>
 
           </div>
         </div>
@@ -75,7 +196,7 @@
                     <i class="bi bi-envelope me-1"></i> Email
                   </a>
                   <a
-                    href="https://teams.microsoft.com/l/chat/0/0?users=dipak.vidani@corpnet.co.in"
+                    href="https:teams.microsoft.com/l/chat/0/0?users=dipak.vidani@corpnet.co.in"
                     class="btn btn-sm btn-outline-light rounded-pill px-3"
                     target="_blank"
                   >
@@ -99,7 +220,7 @@
     </section>
 
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      src="https:cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
