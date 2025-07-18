@@ -118,7 +118,7 @@
 // Question 6 : Create another class (with some extra property) that extends base class ​
 
 class Employee {
-  #salary = 7000;
+  #salary;
 
   constructor(empname, empid, company_name) {
     this.empname = empname;
@@ -128,7 +128,7 @@ class Employee {
 
   static Resign() {
     this.company_name = "";
-    return `My name is ${this.empname} I am Resigning...I am not felling Well...`;
+    return `My name is ${this.empname} I am Resigning ...I am not felling Well ...Good Bye Take care ...`;
   }
 
   getDetails() {

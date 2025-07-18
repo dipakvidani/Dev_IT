@@ -15,42 +15,109 @@
   </head>
 
   <body class="bg-secondary-subtle">
-    <p class="text-center h1 text-danger">17-07-2025</p>
+    <p class="text-center h1 text-danger">17/07/2025</p>
 
-    <div class="bg-secondary">
-      <p>🔶 Why Use Inheritance?</p>
-      <p>
-        To avoid code duplication. To build hierarchical relationships. To
-        extend existing functionality.
-      </p>
-    </div>
-
+     
     <div class="bg-success">
       <p>
-        <p>🔶 Why Prototype? </p>
+        <p>🔶 Why Classes?</p>
         <p>
-          Because JavaScript is prototype-based, it uses
-          prototypes to enable: 
-          <li>
-            Inheritance 
-          </li> 
-          <li>
-           Code reuse 
-          </li>
-          <li>
-            Method sharing between objects
-          </li>
-          <li>
-            p1 --> Person.prototype --> Object.prototype --> null
-          </li>
-          <li>
-            🧩 If a property or method isn’t found in the object, JavaScript keeps looking up the chain until it finds it or reaches null.
-          </li>
+          ✅ To create blueprints for objects.
+          <br />
+          ✅ To encapsulate data and behavior.
+          <br />
+          ✅ To enable inheritance and code reuse.
+          <br />
+          ✅ To provide a clear structure for object-oriented programming.
         </p>
       </p>
     </div>
 
-    <script
+
+    <div class="bg-warning">
+      <p>
+        <p>🔶 Why Constructor?</p>
+        <p>
+          ✅ To initialize object properties.
+          <br />
+          ✅ To set up initial state for objects.
+          <br />
+          ✅ To ensure objects are created with valid data.
+          <br />
+          ✅ To provide a consistent way to create instances of a class.
+        </p>
+      </p>
+    </div>
+
+    <div class="bg-info">
+      <p>
+        <p>🔶 Why Static Methods?</p>
+        <p>
+          ✅ To define methods that belong to the class, not instances.
+          <br />
+          ✅ To provide utility functions related to the class.
+          <br />
+          ✅ To allow access without creating an instance.
+          <br />
+          ✅ To share functionality across all instances of the class.
+        </p>
+      </p>
+    </div>
+
+    <div class="bg-primary">
+      <p>
+        <p>🔶 Why Inheritance?</p>
+        <p>
+          ✅ To create a new class based on an existing class.
+          <br />
+          ✅ To promote code reuse and reduce redundancy.
+          <br />
+          ✅ To establish a parent-child relationship between classes.
+          <br />
+          ✅ To extend or modify the behavior of the base class.
+        </p>
+      </p>
+    </div>
+
+
+     <div class="bg-success">
+      <p>
+        <p>🔶 Why Prototype?</p>
+        <p>
+          ✅ To enable inheritance in JavaScript.
+          <br />
+          ✅ To allow method sharing between instances.
+          <br />
+          ✅ To provide a way to extend object functionality.
+          <br />
+          ✅ To optimize memory usage by sharing methods across instances.
+        </p>
+
+        <p>p1 -----> Person.prototype --------> Object.prototype ------------> null
+</p>
+        
+      </p>    
+    </div>                     
+
+
+    <div class="bg-danger">
+      <p>
+        <p>🔶 Why Encapsulation?</p>
+        <p>
+          ✅ To prevent unwanted external access to internal object properties.
+          <br />
+          ✅ To improve code modularity and maintainability.
+          <br />
+          ✅ To implement data hiding, exposing only what is necessary.
+          <br />
+          ✅ To provide controlled access through getter/setter methods.
+        </p>
+      </p>
+    </div>
+
+    
+
+      <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"

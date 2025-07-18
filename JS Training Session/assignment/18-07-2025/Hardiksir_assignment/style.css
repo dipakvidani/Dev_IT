@@ -1,0 +1,19 @@
+#parent{
+    height:10rem;
+    width: 20rem;
+}
+
+#great-grand-child{
+    height: 95%;
+    width: 95%;
+}
+
+#grand-child{
+    height: 95%;
+    width: 95%;
+}
+
+#child{
+    height: 95%;
+    width: 95%;
+}

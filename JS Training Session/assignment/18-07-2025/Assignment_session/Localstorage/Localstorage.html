@@ -20,26 +20,23 @@
 
   <body class="bg-secondary-subtle overflow-x-hidden">
     <header>
-      <h1 class="text-center h1 text-danger">Assignment 17 july 2025</h1>
+      <h1 class="text-center h1 text-danger">Assignment 18 july 2025</h1>
     </header>
 
     <section class="assignment-question bg-success p-2 my-2">
       <div class="row bg-dark p-5">
         <div class="col-1"></div>
         <div class="col-10">
-          <ul class="fw-bold text-light col-4 w-100">
-            <li>Create a Base Class of your choice</li>
-            <li>
-              Add relevant fields to the class considering "encapsulation"
-            </li>
-            <li>Use constructor to initialize the properties</li>
-            <li>Add a prototype method getDetails() that returns class info</li>
-            <li>Add static method to the class</li>
-            <li>
-              Create another class (with some extra property) that extends base
-              class
-            </li>
-          </ul>
+         <h3 class="text-center text-danger">
+            LocalStorage
+         </h3>
+         <ol>
+            <li>SET IN LOCALSTORAGE</li>
+            <li>GET FROM LOCALSTORAGE</li>
+            <li>DELETE ONE ITEAM FROM LOCALSTORAGE</li>
+            <li>DELETE WHOLE DATA LOCALSTORAGE</li>
+            <li>STORE JSON OR FULL OBJECT ALL DETAILS INTO THE LOCALSTORAGE</li>
+         </ol>
         </div>
         <div class="col-1"></div>
       </div>
@@ -49,83 +46,9 @@
       <div class="mt-5">
         <div class="row g-0">
           <div class="col">
-            <pre class="bg-primary text-light fw-bold fs-6 bg-opacity-75">
-              
-        class Employee {
-          #salary;
+           
 
-          constructor(empname, empid, company_name) {
-            this.empname = empname;
-            this.empid = empid;
-            this.company_name = company_name;
-          }
 
-          static Resign() {
-            this.company_name = "";
-            return `My name is ${this.empname} I am Resigning ...
-                    I am not felling Well ... Good Bye Take care ...`;
-          }
-
-          getDetails() {
-            return `Name : ${this.empname}, EmpID : ${this.empid}, company_name : ${
-              this.company_name
-            }, salary : ${this.#salary}`;
-          }
-        }
-
-        class Manger extends Employee {
-          constructor(empname, empid, company_name, teammembers) {
-            super(empname, empid, company_name);
-            this.teammembers = teammembers;
-            this.designation = this.constructor.name;
-          }
-
-          getDetails() {
-            return `${super.getDetails()}, designation:${
-              this.designation
-            }, teammembers : ${this.teammembers}`;
-          }
-
-          getTeamDetails() {
-            return `Your Team members names are :${this.teammembers}`;
-          }
-        }
-
-        Manger.prototype.setDeadline = function (project) {
-            
-          const currentDate = new Date();
-
-          // Calculate deadline 3 months from now
-          const deadlineDate = new Date(currentDate);
-          deadlineDate.setMonth(deadlineDate.getMonth() + 3);
-
-          // Format the date
-          const formattedDate = deadlineDate.toLocaleDateString("en-IN", {
-            year: "numeric",
-            month: "numeric",
-            day: "numeric",
-          });
-
-          return `Hey ${this.teammembers} Your deadline for project "${project}" is  ${formattedDate}`;
-        };
-
-        // let emp1 = new Employee("Dipak", "TDV 1002", "DEV IT");
-
-        // console.log("Employee Details : ", emp1.getDetails());
-
-        // console.log("Static Resign Function : ", Employee.Resign());
-
-        let Manager1 = new Manger("Dipak", "TDV 1002", "DEV IT", [
-          "Dhruv",
-          " Shashwat",
-          " Ruchit"
-        ]);
-
-        console.log(Manager1.getDetails());
-
-        console.log(Manager1.setDeadline("Tea cofee"));
-
-            </pre>
           </div>
         </div>
       </div>
@@ -180,6 +103,6 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
-    <script src="16-07-2025.js"></script>
+    <script src="Localdtorage.js"></script>
   </body>
 </html>
