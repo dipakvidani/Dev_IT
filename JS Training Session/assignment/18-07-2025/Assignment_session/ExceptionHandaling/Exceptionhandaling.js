@@ -6,7 +6,7 @@ function handleSubmit(e) {
 
   let userEmail = document.getElementById("userEmail").value.trim();
   let userPassword = document.getElementById("userPassword").value;
-  let userAge = document.getElementById("userAge").value;
+  let userAge = parseInt(document.getElementById("userAge").value.trim(), 10);
   let userName = userEmail.split("@")[0].replace(/[^A-Za-z]/g, "");
 
   let isEligible_feedback = document.getElementById("isEligible_feedback");
@@ -56,7 +56,9 @@ function handleSubmit(e) {
         `${userName}, You must agree with our Terms and Conditions !`
       );
     } else {
-      console.log(`${userName}, you accepted the terms.`);
+      isTAndCAccepted_feedback.innerText = "Terms accepted.";
+      isTAndCAccepted_feedback.classList.remove("text-danger");
+      isTAndCAccepted_feedback.classList.add("text-success");
     }
   } catch (error) {
     isTAndCAccepted_feedback.innerText = error.message;
@@ -71,7 +73,7 @@ function handleSubmit(e) {
 
     localStorage.setItem("userData", JSON.stringify(formData)); //local storage
 
-    document.getElementById("Voter Registration Form").reset();
+    document.getElementById("VoterRegistrationForm").reset();
   }
 }
 
@@ -87,7 +89,38 @@ function checkEligibility() {
     if (userAge < 18) {
       throw new Error(`Sorry! ${userName}, You Are a Minor!!!`);
     }
+    isEligible_feedback.innerText = "You are eligable for voting...";
+    isEligible_feedback.classList.remove("text-danger");
+    isEligible_feedback.classList.add("text-success");
   } catch (error) {
+    isEligible_feedback.classList.remove("text-success");
+    isEligible_feedback.classList.add("text-danger");
     isEligible_feedback.innerText = error.message;
+  }
+}
+
+function handleInputEmail() {
+  let userEmail = document.getElementById("userEmail");
+
+  let emailRegex =
+    /^[a-z0-9._%+!$&*=^|~#%'`?{}/\-]+@([a-z0-9\-]+\.){1,}([a-z]{2,16})$/i;
+
+  userEmail.style.boxShadow = "0 0 0 0.25rem rgba(255, 0, 0, 0.25)";
+
+  if (emailRegex.test(userEmail.value.trim())) {
+    userEmail.style.boxShadow = "0 0 0 0.25rem rgba(0, 255, 0, 0.25)";
+  }
+}
+
+function halndleAggrementStatus() {
+  let isTAndCAcceptedElement = document.getElementById("isTAndCAccepted");
+  let isTAndCAccepted = isTAndCAcceptedElement.checked;
+
+  if (!isTAndCAccepted) {
+    isTAndCAcceptedElement.style.boxShadow =
+      "0 0 0 0.25rem rgba(255, 0, 0, 0.25)";
+  }else{
+    isTAndCAcceptedElement.style.boxShadow = "0 0 0 0.25rem rgba(0, 255, 0, 0.25)";
+
   }
 }

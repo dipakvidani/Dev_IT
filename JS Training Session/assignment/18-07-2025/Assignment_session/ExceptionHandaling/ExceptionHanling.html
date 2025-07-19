@@ -43,7 +43,7 @@
             <div class="my-5">
               <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-8">
-                  <form id="Voter Registration Form"
+                  <form id="VoterRegistrationForm"
                     class="bg-dark text-light text-center p-4 rounded shadow"
                   onsubmit="handleSubmit(event)"
                   >
@@ -55,6 +55,7 @@
                         class="form-control"
                         id="userEmail"
                         name="userEmail"
+                        oninput="handleInputEmail()"
                         required
                       />
                     </div>
@@ -76,7 +77,7 @@
                         class="form-control"
                         id="userAge"
                         name="userAge"
-                        onblur="checkEligibility()"
+                        oninput="checkEligibility()"
                       />
                       <span class="text-danger fw-bold" id="isEligible_feedback"></span>
                     </div>
@@ -128,6 +129,7 @@
                           type="checkbox"
                           id="isTAndCAccepted"
                           name="isTAndCAccepted"
+                          oninput="halndleAggrementStatus()"
                         />
                         <label class="form-check-label" for="isTAndCAccepted"
                           >Do You agree with our Tearms and Conditions ?</label
