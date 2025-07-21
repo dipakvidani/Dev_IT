@@ -120,15 +120,16 @@
 class Employee {
   #salary;
 
-  constructor(empname, empid, company_name) {
+  constructor(empname, empid, company_name, salary) {
     this.empname = empname;
     this.empid = empid;
     this.company_name = company_name;
+    this.#salary = salary;
   }
 
   static Resign() {
     this.company_name = "";
-    return `My name is ${this.empname} I am Resigning ...I am not felling Well ...Good Bye Take care ...`;
+    return `My name is ${this.empname} I am Resigning ...I am not felling Well ...`;
   }
 
   getDetails() {
@@ -139,8 +140,8 @@ class Employee {
 }
 
 class Manger extends Employee {
-  constructor(empname, empid, company_name, teammembers) {
-    super(empname, empid, company_name);
+  constructor(empname, empid, salary, company_name, teammembers) {
+    super(empname, empid, company_name,salary);
     this.teammembers = teammembers;
     this.designation = this.constructor.name;
   }
@@ -156,8 +157,8 @@ class Manger extends Employee {
   }
 }
 
+//set prototype of manager
 Manger.prototype.setDeadline = function (project) {
-    
   const currentDate = new Date();
 
   // Calculate deadline 3 months from now
@@ -180,10 +181,10 @@ Manger.prototype.setDeadline = function (project) {
 
 // console.log("Static Resign Function : ", Employee.Resign());
 
-let Manager1 = new Manger("Dipak", "TDV 1002", "DEV IT", [
+let Manager1 = new Manger("Dipak", "TDV 1002","7.5 LPA", "DEV IT", [
   "Dhruv",
   " Shashwat",
-  " Ruchit"
+  " Ruchit",
 ]);
 
 console.log(Manager1.getDetails());
