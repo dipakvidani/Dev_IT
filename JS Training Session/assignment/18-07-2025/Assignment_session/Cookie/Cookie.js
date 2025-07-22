@@ -11,6 +11,13 @@ function setCookie(cookie_description) {
 
 setCookie("EmployeeName=Dipa vidani;expires=Fri, 18 Jul 2025 16:15:00 GMT");
 
+const date = new Date();
+// Get current time in IST (add 5.5 hours)
+const nowIST = new Date(date.getTime() + 5.5 * 60 * 60 * 1000);
+date.setTime(nowIST.getTime() + 1 * 24 * 60 * 60 * 1000); //expires in 1 day
+expires = "; expires=" + date.toUTCString();
+
+
 function removeCookie(cookie) {
   const eqPos = cookie.indexOf("=");
   const name = eqPos > -1 ? cookie.slice(0, eqPos) : cookie;
@@ -25,6 +32,9 @@ setCookie(
   "EmployeeName=Harsh Parmar;expires=Fri, 18 Jul 2025 16:15:00 GMT;Secure; HttpOnly; Domain=mozilla.org;Max-Age=2592000"
 );
 
+setCookie(
+  "CompnayName=Dev IT;expires=Fri, 18 Jul 2025 16:15:00 GMT;Secure; HttpOnly; Max-Age=2592000;"
+);
 //Delete Cookie
 // document.cookie="EmployeeName=Dipak vidani;expires=Fri, 18 Jul 1900 16:15:00 GMT"
 

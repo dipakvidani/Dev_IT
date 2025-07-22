@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link href="https:cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <title>22 july Assignment</title>
+</head>
+
+<body class="bg-secondary-subtle overflow-x-hidden">
+    <header>
+        <h1 class="text-center h1 text-danger">Assignment 22 july 2025</h1>
+    </header>
+
+    <section class="assignment-question bg-success p-2 my-2">
+        <div class="row bg-dark p-5">
+            <div class="col-1"></div>
+            <div class="col-10 text-primary">
+                <h3 class="text-info mx-2">Assignment</h3>
+                <ul>
+                    <li>Write a loop from 1 to 100 that skips the multiple of 3 and 5. </li>
+                    <li>Given an input element with type="email", fetch the value of the type attribute using JavaScript
+                    </li>
+                    <li>Write a function to hide a paragraph when a button is clicked.
+                    </li>
+                    <li>Prompt the user to enter their age and display it in an alert.
+                    <li>Create a form and reset it using a button. </li>
+                    <li>Write a function that returns the square of a number. </li>
+                    </il>
+                    <li>Split the string "red,green,blue" into an array.
+                    </li>
+                    <li>Use a ternary operator to display "Pass" if marks are above 40, otherwise "Fail". </li>
+                </ul>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </section>
+
+    <section class="assignment-Query">
+        <div class="mt-5">
+            <div class="row g-0">
+                <div class="col">
+                    <div id="query" class="bg-danger text-light fw-bold">
+
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="assignment-answer">
+        <div class="mt-5">
+            <div class="row g-0">
+                <div class="col bg-primary text-light fw-bold p-3">
+                    <h1 class="text-center text-warning bg-success">Answers</h1>
+
+                    <pre id="q1" class="bg-info">
+        <p class="text-warning bg-dark text-center">//Q1 Write a loop from 1 to 100 that skips the multiple of 3 and 5. </p>
+            let endnumber=100;
+
+            for (let number = 1; number <= endnumber; number++) {
+            if(number%3==0)  continue;
+            if(number%5==0)  continue;
+                console.log(number);
+            }
+                        </pre>
+
+                    <div id="q1" class="bg-info p-3">
+                        <p class="text-warning bg-dark text-center">//Q2 Given an input element with type="email", fetch
+                            the value of the type attribute using JavaScript
+                        </p>
+                        <form action="">
+                            <div class="form-group">
+                                <label for="userEmail" class="form-label">Email:</label>
+                                <input type="email" name="userEmail" id="userEmail" placeholder="Enter your email..."
+                                    class="form-control">
+                            </div>
+                        </form>
+
+                        <pre>
+                                <p>Answer</p>
+                                
+            let emailField = document.getElementById("userEmail");
+
+            let inpFieldTypeCheck = emailField.getAttribute("type");
+
+            alert("Type of Input Field of Email Input is : " + inpFieldTypeCheck);
+                            </pre>
+                    </div>
+
+                    <div id="q3" class="bg-info p-3">
+                        <p class="text-warning bg-dark text-center">//Q3 Write a function to hide a paragraph when a
+                            button is clicked.
+                        </p>
+
+                        <p id="hideenpara">I am A Mr.paragraph...ft.Mr-India</p>
+                        <button id="btn-hidePra" onclick="toggleParaVisibility()">Hide</button>
+
+                        <p>Answer</p>
+                        <pre>
+            let isParaVisible = true;
+
+            function toggleParaVisibility() {
+                let para = document.getElementById("hideenpara");
+                let btn = document.getElementById("btn-hidePra");
+                //   btn.innerText = "";
+
+                isParaVisible = !isParaVisible;
+
+                btn.innerText = isParaVisible ? "Hide" : "Show";
+
+                para.style.display=isParaVisible?"":"none";
+                para.style.opacity = isParaVisible ? 100 : 0;
+                para.hidden = !isParaVisible ;
+
+            }
+                            </pre>
+                    </div>
+
+                    <div id="q4" class="bg-info p-3">
+                        <p class="text-warning bg-dark text-center"> //Q4 Prompt the user to enter their age and display
+                            it in an alert.
+
+                        </p>
+
+
+
+                        <p>Answer</p>
+                        <pre>
+                    let userAge = prompt("Enter your Age:");
+
+                    try {
+                    userAge = Number(userAge);
+
+                    if (!isNaN(userAge)) {
+                        alert(`Your age is ${userAge}`);
+                    } else {
+                        throw new Error `Invalid Input Type!`; 
+                    }
+                    } catch (error) {
+                    alert(error.message); 
+                    }
+
+                            </pre>
+                    </div>
+
+
+
+                    <div id="q5" class="bg-info p-3">
+                        <p class="text-warning bg-dark text-center">
+                            // Q5 Create a form and reset it using a button.
+                        </p>
+                        <form class="row g-3 bg-dark text-light mt-3 p-3 rounded-3" id="Password_check_form"
+                            onsubmit="handleSubmit(event);">
+                            <div class="col-md-12">
+                                <!-- password -->
+                                <label for="password" class="form-label">Password</label>
+                                <input type="text" class="form-control" oninput="checkPasswordStrength();"
+                                    onfocus="showPwCheck()" onblur="removePwCheck(event)" id="password" />
+                                <span class="text-danger fw-bold" id="password_feedback"></span>
+
+                                <div id="pwCheck" class="d-none">
+                                    <p><span class="fw-bold" id="Cap_char_check"><i
+                                                class="bi bi-check-circle-fill mx-2"></i><span>Min 1 Capital
+                                                Char</span></span></p>
+                                    <p><span class="fw-bold" id="Spec_char_check"><i
+                                                class="bi bi-check-circle-fill mx-2"></i><span>Min 1 Special
+                                                Char</span></span></p>
+                                    <p><span class="fw-bold" id="Num_char_check"><i
+                                                class="bi bi-check-circle-fill mx-2"></i><span>Min 1
+                                                Number</span></span></p>
+                                    <p><span class="fw-bold" id="length_check"><i
+                                                class="bi bi-check-circle-fill mx-2"></i><span>Min 8
+                                                length</span></span></p>
+                                    <p><span class="fw-bold" id="pass_strength_check"><i
+                                                class="bi bi-check-circle-fill mx-2"></i><span>Strong
+                                                Password</span></span></p>
+                                </div>
+                            </div>
+
+                            <!-- confirm password  -->
+                            <div class="col-md-12">
+                                <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="text" class="form-control" id="ConfirmPassword"
+                                    oninput="confirmPassword();" />
+                                <span class="text-danger fw-bold" id="ConfirmPassword_feedback"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                            </div>
+                        </form>
+
+
+                        <p>Answer</p>
+                        <h3 class="text-center text-danger fw-bold">
+                            document.getElementById("Password_check_form").reset();
+
+                        </h3>
+                    </div>
+
+                    <div id="q6" class="bg-info p-3">
+                        <p class="text-warning bg-dark text-center">
+                            // Q6 Write a function that returns the square of a number.
+                        </p>
+
+
+
+
+                        <p>Answer</p>
+                        <pre class="fw-bold">
+            function square(_number){
+                return _number*_number;
+            }
+
+            let numberForFindSquare=10;
+
+
+            console.log(`square of ${numberForFindSquare} is ${square(10)}`);
+                        </pre>
+                    </div>
+
+
+                    <div id="q7" class="bg-info p-3">
+                        <p class="text-warning bg-dark text-center">
+                            // Q 7 Split the string "red,green,blue" into an array.
+                        </p>
+
+
+
+                        <p>Answer</p>
+                        <pre class="fw-bold ">
+
+                let ColorsString="red,green,blue";
+
+                let ColorsArray=ColorsString.split(",");
+
+                console.log(ColorsArray);
+
+                       </pre>
+                    </div>
+
+                    <div id="q8" class="bg-info p-3">
+                        <p class="text-warning bg-dark text-center">
+                            // Q6 Write a function that returns the square of a number.
+                        </p>
+
+
+
+
+                        <p>Answer</p>
+                        <form id="marksForm">
+                            <div class="mb-3">
+                                <label for="marksInput" class="form-label">Enter Your Marks</label>
+                                <input type="number" class="form-control" id="marksInput" placeholder="e.g. 75"
+                                    required>
+                                <div class="mt-4 text-center">
+                                    <span id="resultSpan" class="fw-bold fs-5"></span>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="checkResult();" class="btn btn-primary w-100">Check Result</button>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer class="bg-dark text-white pt-4 pb-2 mt-5">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-8">
+                        <div class="d-flex flex-column align-items-center">
+                            <h3 class="mb-3 text-warning fw-bold">DEV IT</h3>
+                            <p class="mb-1">
+                                Assignment by <span class="text-info">Dipak Vidani</span>
+                            </p>
+                            <p class="mb-1">
+                                Lecturer: <span class="text-success">Parth Jivnani</span>
+                            </p>
+                            <div class="d-flex gap-3 my-2">
+                                <a href="mailto:dipak.vidani@devitpl.com"
+                                    class="btn btn-sm btn-outline-light rounded-pill px-3">
+                                    <i class="bi bi-envelope me-1"></i> Email
+                                </a>
+                                <a href="https:teams.microsoft.com/l/chat/0/0?users=dipak.vidani@corpnet.co.in"
+                                    class="btn btn-sm btn-outline-light rounded-pill px-3" target="_blank">
+                                    <i class="bi bi-microsoft me-1"></i> Teams
+                                </a>
+                                <a href="tel:+917600765534" class="btn btn-sm btn-outline-light rounded-pill px-3">
+                                    <i class="bi bi-telephone me-1"></i> Call
+                                </a>
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge bg-secondary">Date: 22-07-2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="https:cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="22-07-2025.js"></script>
+</body>
+
+</html>
