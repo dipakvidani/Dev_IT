@@ -20,7 +20,7 @@ function handleOrder(e) {
 
     processOrder(name, pizza, total).then((msg) => {
       alert(msg);
-      card.style.boxShadow = "0 0 10px green";
+      card.style.boxShadow = "0 0 50px green";
       btn.innerText = "Order Placed!";
       btn.disabled = true;
     }).catch((err) => {

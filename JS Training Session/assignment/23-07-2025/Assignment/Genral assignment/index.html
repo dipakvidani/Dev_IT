@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link href="https:cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <title>23 july Assignment</title>
+</head>
+
+<body class="bg-secondary-subtle overflow-x-hidden">
+    <header>
+        <h1 class="text-center h1 text-danger">Assignment 23 july 2025</h1>
+    </header>
+
+    <section class="assignment-question bg-success p-2 my-2">
+        <div class="row bg-dark p-5">
+            <div class="col-1"></div>
+            <div class="col-10 text-primary">
+                <h3 class="text-info mx-2">Assignment</h3>
+                <ul>
+                    <li>Write a loop from 1 to 100 that skips the multiple of 3 and 5. </li>
+                    <li>Given an input element with type="email", fetch the value of the type attribute using JavaScript
+                    </li>
+                    <li>Write a function to hide a paragraph when a button is clicked.
+                    </li>
+                    <li>Prompt the user to enter their age and display it in an alert.
+                    <li>Create a form and reset it using a button. </li>
+                    <li>Write a function that returns the square of a number. </li>
+                    </il>
+                    <li>Split the string "red,green,blue" into an array.
+                    </li>
+                    <li>Use a ternary operator to display "Pass" if marks are above 40, otherwise "Fail". </li>
+                </ul>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </section>
+
+    <section class="assignment-Query">
+        <div class="mt-5">
+            <div class="row g-0">
+                <div class="col">
+                    <div id="query" class="bg-danger text-light fw-bold">
+
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="assignment-answer">
+        <div class="mt-5">
+            <div class="row g-0">
+                <div class="col bg-primary bg-opacity-75 text-light fw-bold p-3">
+                    <h1 class="text-center text-warning bg-success">Answers</h1>
+
+                    <div id="Question_1" class="p-3 bg-gradient rounded-4">
+                        <p class="bg-dark text-warning">Q1 Write a function checkKeyword(str, keyword) that returns true
+                            if the keyword is found in
+                            the given str, case-insensitive.
+                            // checkKeyword("Hello World", "world"); // true</p>
+
+                        <div id="Ans_Question_1">
+                            <form class="row g-3" onsubmit="handleSearch(event)">
+                                <div class="col-md-12">
+                                    <label for="userStr" class="form-label">Enter Your Sentence/Word</label>
+                                    <input type="text" class="form-control" id="userStr">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="keyword" class="form-label">keyword for search in Sentence</label>
+                                    <input type="text" class="form-control" id="keyword">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-info w-100 fw-bold" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">Search</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- modal  -->
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-black text-light">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Search Result
+                                        </h1>
+                                        <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3 class="text-center bg-warning" id="checkKeywordFeedback"></h3>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-bs-dismiss="modal">OK</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="Question_2" class="p-3 bg-gradient rounded-4">
+                        <p class="bg-dark text-warning">Q2 -Create a function getWeekNumber(date) that returns the ISO
+                            8601 week number of a given date.
+                        </p>
+
+                        <div id="Ans_Question_1">
+                            <pre class="fw-bold">
+
+                function getWeekNumber(anyDate) {
+                let today = new Date(anyDate);
+                console.log("today ", today);
+
+                let firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+                console.log("firstDayOfYear ", firstDayOfYear);
+
+                let totalDayPassedInMs = Math.abs(today - firstDayOfYear);
+
+                console.log("totalDayPassedInMs ", totalDayPassedInMs);
+
+                let daysPassed = Math.floor(totalDayPassedInMs / (1000 * 60 * 60 * 24));  //Bcz day value can not be next we must take it lower with points
+
+                console.log("daysPassed ",daysPassed);
+
+                let weekPassedTillDate=Math.ceil(daysPassed/7);
+
+                console.log("weekPassedTillDate",weekPassedTillDate);
+                
+                return `This is Week number ${weekPassedTillDate} of year ${today.getFullYear()}`
+                }
+
+                const today = new Date();
+
+                let day = today.getDate();
+                let month = today.getMonth() + 1; // getMonth() returns 0-indexed month
+                let year = today.getFullYear();
+
+                // Add leading zeros if day or month is a single digit
+                if (day < 10) {
+                day = "0" + day;
+                }
+                if (month < 10) {
+                month = "0" + month;
+                }
+
+                // const todayFormattedDate = `${day}/${month}/${year}`;
+
+                console.log(getWeekNumber(`${year}-${month}-${day}`));
+
+
+                // console.log(todayFormattedDate);
+
+                // getWeekNumber(today);
+
+                // console.log(new Date().getMonth());
+
+
+                            </pre>
+                        </div>
+
+                        <!-- modal  -->
+
+
+
+                    </div>
+
+                    <div id="Question_2" class="p-3 bg-gradient rounded-4">
+                        <p class="bg-dark text-warning">Q3 Write a function cleanNames(str) that takes a comma-separated
+                            string and returns an array of trimmed
+                            // cleanNames(" John , Jane , Bob ") // ["John", "Jane", "Bob"]
+                        </p>
+
+                        <div id="Ans_Question_1">
+                            <pre class="fw-bold">
+
+                function getWeekNumber(anyDate) {
+                let today = new Date(anyDate);
+                console.log("today ", today);
+
+                let firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+                console.log("firstDayOfYear ", firstDayOfYear);
+
+                let totalDayPassedInMs = Math.abs(today - firstDayOfYear);
+
+                console.log("totalDayPassedInMs ", totalDayPassedInMs);
+
+                let daysPassed = Math.floor(totalDayPassedInMs / (1000 * 60 * 60 * 24));  //Bcz day value can not be next we must take it lower with points
+
+                console.log("daysPassed ",daysPassed);
+
+                let weekPassedTillDate=Math.ceil(daysPassed/7);
+
+                console.log("weekPassedTillDate",weekPassedTillDate);
+                
+                return `This is Week number ${weekPassedTillDate} of year ${today.getFullYear()}`
+                }
+
+                const today = new Date();
+
+                let day = today.getDate();
+                let month = today.getMonth() + 1; // getMonth() returns 0-indexed month
+                let year = today.getFullYear();
+
+                // Add leading zeros if day or month is a single digit
+                if (day < 10) {
+                day = "0" + day;
+                }
+                if (month < 10) {
+                month = "0" + month;
+                }
+
+                // const todayFormattedDate = `${day}/${month}/${year}`;
+
+                console.log(getWeekNumber(`${year}-${month}-${day}`));
+
+
+                // console.log(todayFormattedDate);
+
+                // getWeekNumber(today);
+
+                // console.log(new Date().getMonth());
+
+
+                            </pre>
+                        </div>
+
+                        <!-- modal  -->
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer class="bg-dark text-white pt-4 pb-2 mt-5">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-8">
+                        <div class="d-flex flex-column align-items-center">
+                            <h3 class="mb-3 text-warning fw-bold">DEV IT</h3>
+                            <p class="mb-1">
+                                Assignment by <span class="text-info">Dipak Vidani</span>
+                            </p>
+                            <p class="mb-1">
+                                Lecturer: <span class="text-success">Jatin Shah</span>
+                            </p>
+                            <div class="d-flex gap-3 my-2">
+                                <a href="mailto:dipak.vidani@devitpl.com"
+                                    class="btn btn-sm btn-outline-light rounded-pill px-3">
+                                    <i class="bi bi-envelope me-1"></i> Email
+                                </a>
+                                <a href="https:teams.microsoft.com/l/chat/0/0?users=dipak.vidani@corpnet.co.in"
+                                    class="btn btn-sm btn-outline-light rounded-pill px-3" target="_blank">
+                                    <i class="bi bi-microsoft me-1"></i> Teams
+                                </a>
+                                <a href="tel:+917600765534" class="btn btn-sm btn-outline-light rounded-pill px-3">
+                                    <i class="bi bi-telephone me-1"></i> Call
+                                </a>
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge bg-secondary">Date: 23-07-2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="https:cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

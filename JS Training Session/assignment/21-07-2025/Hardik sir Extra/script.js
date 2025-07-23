@@ -43,3 +43,36 @@ console.log(a >= 0); //true
                 resolve();
             }, 2000);
         });
+
+//[1, 2, "A", "a", "B", "b"]
+const array=[ "A", "b", "a", "B",1,2]
+        array.sort((a, b) => {
+  let strA = String(a).toLowerCase();
+  let strB = String(b).toLowerCase();
+  if (strA < strB) return -1;
+  if (strA < strB) return 1;
+ 
+});
+console.log(array);
+
+
+let arr = ["a", "A", "B", "b"];
+console.log(arr.sort());
+let newarr = arr.sort((a, b) => {
+  let upperA = a.toUpperCase();
+  let upperB = b.toUpperCase();
+
+  if (upperA === upperB) {
+    return a < b ? -1 : 1;
+  }
+
+  return upperA < upperB ? -1 : 1;
+});
+
+console.log("72"+newarr);
+
+
+
+let nul=null;
+
+let name="Dipak"
