@@ -233,7 +233,143 @@
                             </pre>
                         </div>
 
-                        <!-- modal  -->
+
+
+console.log("=======================================================");
+
+// ================================================================================================================================================
+
+//Q4 Create a countdown timer that counts down from 10 to 0 in the console using setInterval(), and logs "Done!" when finished.
+let countDown = 10;
+
+const countDownInterval = setInterval(() => {
+  console.log("countDown", countDown);
+  countDown--;
+
+  if (countDown < 0) {
+    clearInterval(countDownInterval);
+    console.log("Done!");
+  }
+}, 1000);
+
+console.log("=======================================================");
+
+// ================================================================================================================================================
+
+//Q5  Create a class Car with a static property totalCars and a const object inside a function.
+
+class Car {
+  static staticTotalCars = 30;
+
+  constructor(staticTotalCars){
+    this.staticTotalCars=staticTotalCars;
+  }
+}
+
+// console.log("staticTotalCars ",Car.staticTotalCars);
+
+// let toyato=new Car(25);
+
+// console.log("staticTotalCars ",toyato.staticTotalCars);  //25
+
+Car.staticTotalCars=333;
+
+console.log("staticTotalCars ",Car.staticTotalCars);
+
+
+
+
+
+function getDetatils() {
+  const EngineDetails = {
+    model:"v8",
+    year:"2025"
+  };
+
+  return EngineDetails;
+}
+
+console.log(getDetatils());
+
+console.log("=======================================================");
+
+// ==============================================================================================================================================
+
+
+//Q6  Explain when to use static vs const.
+// Static properties are used when you want to share a property or method across all instances of a class.
+// Const is used to define a constant value that should not change throughout the program.
+
+
+//=================================================================================================================
+// Q7 Write a function parseCSV(str) that:
+// Converts a comma-separated string to an array
+// Trims each item
+// Filters out empty strings
+
+function parseCSV(str) {
+  let csvArray = str.split(",").map(item => item.trim()).filter(item => item !== "");
+  return csvArray;
+}
+
+console.log(" parseCSV Function O/P :",parseCSV(", apple , banana , , cherry "));
+; // ["apple", "banana", "cherry"]
+
+
+
+console.log("========================================================");
+
+
+
+//==================================================================================================================
+
+
+                    <div id="Question_3" class="p-3 bg-gradient rounded-4">
+                        <p class="bg-dark text-warning">Q4 Write a function daysBetween(dt1, dt2) that returns the number of
+                            days between two dates.
+                            // daysBetween("2025-07-01", "2025-07-23"); // 22
+                        </p>
+
+                        <div id="Ans_Question_1">
+                            <pre class="fw-bold">
+function daysBetween(dt1, dt2) {
+    let date1 = new Date(dt1);
+    let date2 = new Date(dt2);
+    console.log(`days btw ${dt1} and ${dt2} Function...`);
+    let dateDiffranceInMs = Math.floor(Math.abs(date2 - date1));
+    console.log("dateDiffranceInMs ", dateDiffranceInMs);
+    let dateDiffranceInDay = dateDiffranceInMs / (1000 * 60 * 60 * 24);
+    console.log("dateDiffranceInDay ", dateDiffranceInDay);
+    return `day btw ${dt1}-${dt2} is ${dateDiffranceInDay}`;
+
+}
+    console.log(daysBetween("2025-07-01", "2025-07-23"));
+                            </pre>
+                        </div>
+
+                        ========================================================================================
+
+// Q3 Write a function cleanNames(str) that takes a comma-separated
+//                             string and returns an array of trimmed
+// cleanNames(" John , Jane , Bob ") // ["John", "Jane", "Bob"]
+
+function cleanNames(str) {
+  let strArraySepratedFromComaa = str.split(","); //[ ' John ', ' Jane ', ' Bob ' ]
+  console.log("strArraySepratedFromComaa", strArraySepratedFromComaa);
+
+  let arrayWithTrimmedElement = strArraySepratedFromComaa.map((el) =>
+    el.trim()
+  );
+
+  console.log("arrayWithTrimmedElement", arrayWithTrimmedElement);
+}
+
+cleanNames(" John , Jane , Bob ");
+
+                        ========================================================================================
+                        
+
+
 
 
 

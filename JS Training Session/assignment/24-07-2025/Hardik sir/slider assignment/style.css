@@ -1,0 +1,16 @@
+#silder {
+  width: 25%;
+  transition: all 0.3s ease;
+}
+
+#main_container {
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+/* When sidebar is shown on large screens, shift main container */
+@media (min-width: 768px) {
+  #silder.show ~ #main_container {
+    width: calc(100% - 25%);
+  }
+}

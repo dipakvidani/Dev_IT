@@ -10,9 +10,20 @@
 //Q1 Write a loop from 1 to 100 that skips the multiple of 3 and 5.
 let endnumber = 100;
 
+// for (let number = 1; number <= endnumber; number++) {
+//   if (number % 3 == 0) continue;
+//   if (number % 5 == 0) continue;
+//   console.log(number);
+// }
+
 for (let number = 1; number <= endnumber; number++) {
-  if (number % 3 == 0) continue;
-  if (number % 5 == 0) continue;
+  if (
+   ( !(number % 3 == 0) &&
+    !(number % 5 == 0)) &
+  (  number % 3 == 0 &&
+    number % 5 == 0)
+  )
+    continue;
   console.log(number);
 }
 
@@ -22,7 +33,7 @@ let emailField = document.getElementById("userEmail");
 
 let inpFieldTypeCheck = emailField.getAttribute("type");
 
-// alert("Type of Input Field of Email Input is : " + inpFieldTypeCheck);
+alert("Type of Input Field of Email Input is : " + inpFieldTypeCheck);
 
 //Q3 Write a function to hide a paragraph when a button is clicked.
 let isParaVisible = true;
@@ -42,18 +53,18 @@ function toggleParaVisibility() {
 }
 
 //Q4 Prompt the user to enter their age and display it in an alert.
-// let userAge = prompt("Enter your Age:");
+let userAge = prompt("Enter your Age:");
 
 try {
   userAge = Number(userAge);
 
   if (!isNaN(userAge)) {
-    // alert(`Your age is ${userAge}`);
+    alert(`Your age is ${userAge}`);
   } else {
     throw new Error`Invalid Input Type!`();
   }
 } catch (error) {
-//   alert(error.message);
+  alert(error.message);
 }
 
 // Q5 Create a form and reset it using a button.
@@ -115,25 +126,25 @@ function handleSubmit(e) {
   let ConfirmPassword = document.getElementById("ConfirmPassword").value;
 
   e.preventDefault();
-  
+
   if (password === "" || confirmPassword === "") {
-    //   alert("Fullfill all the Details !!");
-      return false;
-    }
-    
-    //   console.log(isPasswordStrong(password));
-    
-    if (
-        !isPasswordStrong(password) ||
-        !isPassIncludeOneCapitalChar(password) ||
+    alert("Fullfill all the Details !!");
+    return false;
+  }
+
+  //   console.log(isPasswordStrong(password));
+
+  if (
+    !isPasswordStrong(password) ||
+    !isPassIncludeOneCapitalChar(password) ||
     !isPassIncludeOneNumChar(password) ||
     !isPassIncludeOneSpecialChar(password) ||
     !isPasswordStrong(password) ||
     password !== confirmPassword
-) {
-    // alert("Full fill all the Requirement!!!");
-}
-document.getElementById("Password_check_form").reset();   
+  ) {
+    alert("Full fill all the Requirement!!!");
+  }
+  document.getElementById("Password_check_form").reset();
 }
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -172,36 +183,38 @@ function isPassIncludeOneNumChar(password) {
   return regex.test(password);
 }
 
-
 // Q6 Write a function that returns the square of a number.
 
-function square(_number){
-    return _number*_number;
+function square(_number) {
+  return _number * _number;
 }
 
-let numberForFindSquare=10;
-
+let numberForFindSquare = 10;
 
 console.log(`square of ${numberForFindSquare} is ${square(10)}`);
 
 // Q 7 Split the string "red,green,blue" into an array.
 
-let ColorsString="red,green,blue";
+let ColorsString = "red,green,blue";
 
-let ColorsArray=ColorsString.split(",");
+let ColorsArray = ColorsString.split(",");
 
 console.log(ColorsArray);
-
 
 //Q 8 Use a ternary operator to display "Pass" if marks are above 40, otherwise "Fail".
 function checkResult() {
   const marksInput = document.getElementById("marksInput").value.trim();
   const resultSpan = document.getElementById("resultSpan");
 
-  resultSpan.innerText = ""; 
+  resultSpan.innerText = "";
 
-  if (marksInput === "" || isNaN(marksInput) || marksInput < 0 || marksInput > 100) {
-    resultSpan.innerText = "Please enter valid marks (0–100)";
+  if (
+    marksInput === "" ||
+    isNaN(marksInput) ||
+    marksInput < 0 ||
+    marksInput > 100
+  ) {
+    resultSpan.innerText = "Please enter valid marks (0-100)";
     resultSpan.className = "text-warning fw-bold";
     return;
   }
@@ -216,4 +229,3 @@ function checkResult() {
     ? "text-success fw-bold"
     : "text-danger fw-bold";
 }
-

@@ -19,9 +19,9 @@
 
 //Q5  Create a class Car with a static property totalCars and a const object inside a function.
 
-//Q8  Explain when to use static vs const.
+//Q6  Explain when to use static vs const.
 
-// Q9 Write a function parseCSV(str) that:
+// Q7 Write a function parseCSV(str) that:
 
 // Converts a comma-separated string to an array
 
@@ -173,6 +173,8 @@ const countDownInterval = setInterval(() => {
   }
 }, 1000);
 
+console.log("=======================================================");
+
 // ================================================================================================================================================
 
 //Q5  Create a class Car with a static property totalCars and a const object inside a function.
@@ -200,10 +202,44 @@ console.log("staticTotalCars ",Car.staticTotalCars);
 
 
 function getDetatils() {
-  const Engine = {
+  const EngineDetails = {
     model:"v8",
     year:"2025"
   };
+
+  return EngineDetails;
 }
 
+console.log(getDetatils());
 
+console.log("=======================================================");
+
+// ==============================================================================================================================================
+
+
+//Q6  Explain when to use static vs const.
+// Static properties are used when you want to share a property or method across all instances of a class.
+// Const is used to define a constant value that should not change throughout the program.
+
+
+//=================================================================================================================
+// Q7 Write a function parseCSV(str) that:
+// Converts a comma-separated string to an array
+// Trims each item
+// Filters out empty strings
+
+function parseCSV(str) {
+  let csvArray = str.split(",").map(item => item.trim()).filter(item => item !== "");
+  return csvArray;
+}
+
+console.log(" parseCSV Function O/P :",parseCSV(", apple , banana , , cherry "));
+; // ["apple", "banana", "cherry"]
+
+
+
+console.log("========================================================");
+
+
+
+//==================================================================================================================
