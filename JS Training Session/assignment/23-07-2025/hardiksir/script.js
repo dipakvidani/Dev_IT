@@ -37,3 +37,18 @@ function isPowerOfTwo(x) {
 
 console.log("isPowerOfTwo(11) " , isPowerOfTwo(11)?"is Power of two":"is not Power of two");
 console.log("isPowerOfTwo(4) " , isPowerOfTwo(4)?"is Power of two":"is not Power of two");
+
+
+// if (x == 1 && x == 2 && x == 3) 
+
+
+let x = {
+  value: 1,
+  valueOf: function () {
+    return this.value++;
+  },
+};
+
+if (x == 1 && x == 2 && x == 3) {
+  console.log("true");
+}
