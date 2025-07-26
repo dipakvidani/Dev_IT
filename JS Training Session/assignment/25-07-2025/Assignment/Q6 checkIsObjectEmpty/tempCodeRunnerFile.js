@@ -1,0 +1,1 @@
+Object.keys(objName).length > 0

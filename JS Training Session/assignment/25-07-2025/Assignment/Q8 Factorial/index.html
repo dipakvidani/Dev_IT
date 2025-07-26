@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>8)Find the Fectorial.</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="card shadow-lg p-4 rounded-4">
+        <h4 class="text-primary mb-4">
+          <i class="bi bi-link-45deg me-2"></i> 8)Find the Fectorial.
+        </h4>
+
+        <label for="inputNumber" class="form-label fw-semibold"
+          >Number for find factorial:</label
+        >
+        <input
+          id="inputNumber"
+          type="number"
+          class="form-control mb-3"
+          placeholder='e.g. 9'
+        ></input>
+
+        <button
+          onclick="findFactorial()"
+          class="btn btn-primary w-100 mb-3"
+        >
+          <i class="bi bi-arrow-right-circle me-2"></i>Find the Factorial
+        </button>
+
+        <div class="alert alert-info fw-semibold d-none" id="outputCard">
+          <span id="FactorialSpan" class="text-black fw-bold"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

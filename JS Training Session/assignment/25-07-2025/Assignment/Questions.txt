@@ -1,0 +1,18 @@
+1)Generate Random Numbers 1 to 100.
+2)Remove Duplecate From Array ex. const arr = [1,2,2,3,3,3,4,5,7,7,7] without using Newset() method.
+3)Count Number of Vowels in string ex. const name = 'Javascript'.
+4)Swapping two variable Without Using Third Variable.
+5)Debounce function.
+6)Write a Program Check if an object is Empty.
+7)Convert an Object to a quareyString.
+8)Find the Fectorial.
+9)Check if two arrays are Equal.
+10)Get All Unique values from Nested Array ex.[[1,2],[2,3],[3,4],[4,3],[5,5]].
+11) Convert String to CamalCase.(Your Full Name).
+12)Make a TextArea And write a Paraghraph in it and also make a button and when user Click btn the whole Paragraph Will Cpoied.
+13)Check If String Has All new Char.
+14)Find The First Non Reapeting Char In String.
+15)Find The Intersection of Two Arrays ex. [[1,2,3],[2,3,4]] / O.P [2,3].
+16)Find a Group of Elements by Frequancy (Write Your Own FullName).
+17)Find all pair in an Array that sum to a Target Numbers ex. [-1,2,3,3,4,7] / O.P  [[2,4],[3,3],[7,-1]] ...
+18) All Console.log (setTimeout) QUE...
