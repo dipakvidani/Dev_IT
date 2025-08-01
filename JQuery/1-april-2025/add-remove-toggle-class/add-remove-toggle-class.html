@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>add-remove-toggle-class</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- btn remove class / class of bg name  -->
+    <button class="btn btn-primary" id="btn--removeClass">
+      Remove Background/Class Name
+    </button>
+
+    <!-- btn add class / class of fontsize  -->
+    <button class="btn btn-primary" id="btn--addClass">
+      Add ClassName/Change fs
+    </button>
+
+    <!-- btn toggle class / classes  -->
+    <button class="btn btn-primary" id="btn--toggle">
+      toggle class(opacity-50)
+    </button>
+
+    <div
+      id="div-add-remove-toggle-class"
+      class="bg-success font-monospace text-info p-3 rounded-4 m-3"
+    >
+      <p class="fw-bold">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+        quibusdam asperiores provident similique repellendus aperiam sequi unde
+        possimus quos eius sunt inventore, fuga sed sit a aspernatur,
+        consequuntur eos amet quisquam cupiditate illo alias vel aut itaque.
+        Perspiciatis voluptatum quisquam eos porro nobis corrupti quibusdam
+        aperiam ea doloremque soluta neque, accusamus harum sit illum, quod iure
+        tempore nesciunt? Aliquid at ipsam natus accusamus minus incidunt
+        repellat ea laudantium necessitatibus nobis maxime dignissimos, sed,
+        suscipit beatae amet neque asperiores! Consequatur necessitatibus
+        reprehenderit, sed asperiores aut, debitis repellat nam nulla vel,
+        repellendus officia officiis! Pariatur suscipit quo sed sint nam,
+        aspernatur cum rem repellat blanditiis dicta minima libero repudiandae
+        laboriosam omnis ad neque perferendis unde alias, fugiat quaerat impedit
+        tenetur dolorum facere? Tempora adipisci, vitae autem sequi beatae
+        exercitationem inventore quisquam provident! Fugiat, omnis. Aut,
+        distinctio. Dolores reprehenderit error nobis ipsa excepturi quis
+        provident aliquid praesentium quaerat quae culpa illum autem corporis,
+        maiores expedita! Minima debitis fuga fugiat atque id eius magni
+        assumenda earum iusto facere voluptatibus, sint nostrum harum, quisquam
+        amet. Ad sit quo at earum iusto, reprehenderit, dolorem expedita cum
+        eligendi praesentium enim possimus amet rem aut quisquam error inventore
+        blanditiis tenetur repellendus quam numquam cumque, nemo iste quas! Odit
+        officiis ducimus doloremque neque fugiat! Molestias architecto nam
+        beatae numquam. Voluptatem numquam omnis quisquam quod fuga earum
+        voluptas consectetur nulla ratione. Doloremque repellendus incidunt
+        itaque veniam asperiores quod culpa a necessitatibus nostrum id non
+        laudantium fugit officia unde quisquam ea ducimus cumque eaque voluptate
+        iusto omnis ipsum, enim voluptatum? Aspernatur quos voluptas blanditiis
+        reprehenderit iste quod accusantium doloribus autem id eos totam labore
+        mollitia ad dignissimos quisquam hic sed est, nesciunt quam voluptatem
+        dolore fuga ipsum molestiae? Quisquam, et cumque doloribus at adipisci,
+        harum blanditiis voluptate sint itaque alias voluptas? Amet fugit
+        molestiae accusamus, ipsa aliquid facilis rerum nobis dolores aspernatur
+        illum tempore, doloremque sit repudiandae necessitatibus vero omnis ut
+        excepturi porro deleniti? Quod atque adipisci quia, dolorem impedit
+        nesciunt eligendi eos nisi repudiandae molestiae consequatur ducimus
+        architecto, animi repellat temporibus expedita voluptatum corrupti
+        itaque cum maiores eveniet consequuntur ullam cumque officia. Maxime id
+        omnis fugit pariatur eum alias fugiat error nihil totam deleniti aliquam
+        veritatis, voluptates nisi, facilis accusamus recusandae ipsum quisquam
+        similique officiis molestias veniam. Dolor, commodi eum asperiores ipsam
+        sequi omnis quod, id numquam quisquam possimus iusto sunt eligendi quae,
+        quia distinctio dolores minima unde ad suscipit est ut fugiat in
+        molestiae cupiditate! Illum fuga error ipsa exercitationem commodi
+        quisquam ex incidunt iure nisi corrupti, possimus nobis laudantium culpa
+        deserunt blanditiis veritatis? Distinctio possimus nobis eaque, quos
+        quisquam reiciendis, dolore excepturi doloribus nam quam odit maiores
+        repellendus adipisci porro, obcaecati minima itaque amet eos!
+        Accusantium optio iure animi facere neque impedit! Dolorem,
+        exercitationem? Exercitationem quibusdam totam quo reiciendis corrupti
+        nulla accusamus ipsa cumque architecto neque, tempora odit voluptatibus!
+        Quas, nihil sint animi voluptatibus minima quia, voluptate quisquam
+        cupiditate sit placeat, doloribus voluptas? Ab, labore ullam porro
+        fugiat pariatur, suscipit distinctio assumenda rerum recusandae iste
+        quasi eius incidunt, est expedita illo nisi vero error? Quod magni neque
+        non!
+      </p>
+    </div>
+
+    <script>
+      $("document").ready(() => {
+        //example : remove class
+        $("#btn--removeClass").on("click", () => {
+          $("#div-add-remove-toggle-class").removeClass("font-monospace");
+        });
+
+        //example : add class
+        $("#btn--addClass").on("click", () => {
+          $("#div-add-remove-toggle-class").addClass("shadow-lg lead");
+        });
+
+        //example : toggle class
+        $("#btn--toggle").on("click", () => {
+          $("#div-add-remove-toggle-class")
+            .fadeOut(1000)
+            .toggleClass("fst-italic display-5  text-muted")
+            .fadeIn(1000);
+        });
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

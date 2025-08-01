@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+
+    <!-- p will added inside as per which append or prepend is used  -->
+    <div class="bg-warning fw-bold text-black fs-4 p-3" id="div-append-prepend">
+      <p class="bg-danger text-warning fs-5">I am Already presented Hear !!!</p>
+    </div>
+
+    <button id="btn-append" class="btn btn-primary">Append</button>
+    <button id="btn-prepend" class="btn btn-dark">Prepend</button>
+
+    <script>
+      $("document").ready(() => {
+        // append p inside div
+        $("#btn-append").on("click",()=>{
+          $("#div-append-prepend").append("<p class='bg-success text-light fs-5'>I am come with the use of .append()</p>")
+        })
+        
+        // prepend p inside div
+        $("#btn-prepend").on("click",()=>{
+          $("#div-append-prepend").prepend("<p class='bg-success text-light fs-5'>I am come with the use of .prepend()</p>")
+        })
+        
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

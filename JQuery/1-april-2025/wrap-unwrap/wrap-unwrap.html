@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wrap and Unwrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- p which is wrapped or unwrapped -->
+    <p id="p-wrap-unwrap" class="bg-dark text-light fw-bold fs-3 mb-0 p-2 rounded-3">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ad iure
+      illo incidunt officia molestias velit officiis fuga, soluta accusamus
+      vitae nostrum! Quas vero, ex commodi veniam corrupti optio aspernatur
+      consequatur et inventore at nulla sint eaque animi non, amet quo unde
+      veritatis, ratione soluta quaerat? Enim dolorem ut voluptatum?
+    </p>
+    <p></p>
+
+    <!-- btn for wrap p into div  -->
+    <button id="btn-p--wrap" class="btn btn-info text-black fw-bold">
+      Wrap Paragraph Inside div!
+    </button>
+
+    <!-- btn for wrap p into div  -->
+    <button id="btn-p--unwrap" class="btn btn-info text-black fw-bold">
+      unWrap Paragraph from div!
+    </button>
+
+    <script>
+      $("document").ready(() => {
+        //wrap p into div
+        $("#btn-p--wrap").on("click", () => {
+          $("#p-wrap-unwrap").wrap("<div class='bg-success p-2 rounded-3'></div>");
+        });
+
+        //unwrap p from parent
+        $("#btn-p--unwrap").on("click", () => {
+          $("#p-wrap-unwrap").unwrap();
+        });
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

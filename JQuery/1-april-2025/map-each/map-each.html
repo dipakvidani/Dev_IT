@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Map and Each</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="row">
+      <h1>Each Example</h1>
+      <div
+        class="bg-black text-light fw-bold fs-3 fst-italic p-3 col-6"
+        id="div-each--content"
+      >
+        <ol>
+          <li>K L rahul</li>
+          <li>Virat Kohli</li>
+          <li>Shubhman Gill</li>
+          <li>M S Dhoni</li>
+          <li>Ravidra Jadeja</li>
+          <li>K L rahul</li>
+          <li>Virat Kohli</li>
+          <li>Shubhman Gill</li>
+          <li>M S Dhoni</li>
+          <li>Ravidra Jadeja</li>
+        </ol>
+      </div>
+
+      <div class="col-6">
+        <button id="btn-print-each" class="btn btn-info fw-bold">
+          Print data Using Each
+        </button>
+        <button id="btn-print-map" class="btn btn-info fw-bold">
+          Print data Using Map
+        </button>
+        <div id="div-map--content"></div>
+      </div>
+    </div>
+
+    <script>
+      $("document").ready(() => {
+        let coloredBg = [
+          "bg-success",
+          "bg-danger",
+          "bg-info",
+          "bg-warning",
+          "bg-primary",
+          "bg-black",
+        ];
+
+        let user = {
+          name: "Dipak Vidani",
+          age: 21,
+          designation: "Devloper",
+          collageName: "s.s.e.c",
+          dob: "12-12-2012",
+        };
+
+        //give color using each() method
+        $("li").each((idx, li) => {
+          //   console.log(li);
+          $(li).addClass(coloredBg[idx % 6]);
+        });
+        $("#btn-print-each").on("click", () => {
+          $.each(user, function (keyName, val) {
+            $("#div-each--content").prepend(
+              `<p class='fw-bold fs-3 text-warning lead'>${keyName} : ${val}</p>`
+            );
+          });
+        });
+        $("#btn-print-map").on("click", () => {
+          $('li').map((idx,ele)=>{
+            let liText=$(ele).text();
+            $("#div-map--content").append(`<p class='text-center text-capitalize bg-danger-subtle text-info'>li ${idx+1} : ${liText}</p>`)
+          })
+        });
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- inner text using .text()  -->
+    <p
+      id="para-text-method"
+      class="bg-secondary text-light fw-bold text-center fs-4"
+    ></p>
+
+    <!-- inner text using .html()  -->
+    <div id="div-html-method"></div>
+
+    <!-- get value using .val() -->
+    <!-- it is basically use for get input values -->
+
+    <input type="text" name="user-name" id="user-name"/>
+    <button id="btn-get-val" class="btn btn-success">get input value</button>
+    <p id="p-inp-val" class="bg-dark text-light fw-bold text-center fs-4"></p>
+
+    <!-- get attribute using .attr() -->
+     <p id="p-gte-attr" class="bg-success text-black fw-bold fs-4"></p>
+    <button id="btn-get-attr" class="btn btn-warning">get attribute of input</button>
+    <script>
+      $("document").ready(() => {
+        //inner text using .text()
+        $("#para-text-method").text("I am Come from .text() method...");
+
+        // get value using .html()
+        $("#div-html-method").html(
+          "<p class='text-info bg-warning fw-bold fs-4 text-center'>I am Come from .html() method...</p>"
+        );
+
+        // get inner text using .val()
+        $("#btn-get-val").on("click", () => {
+          let userName = $("[name='user-name']").val();
+          // console.log(userName);
+          setTimeout(() => {
+            $("#p-inp-val")
+              .fadeOut(1000)
+              .text("userName :" + userName)
+              .fadeIn(1000);
+          }, 500);
+        });
+
+        // get attribute id using .attr()
+        $("#btn-get-attr").on("click", () => {
+        //   console.log($("input").attr("id"));
+          let inputId=$("input").attr("id");
+    
+            $("#p-gte-attr").text("inputId of Above input is : " + inputId)
+        });
+
+        
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

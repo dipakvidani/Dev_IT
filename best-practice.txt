@@ -1,0 +1,9 @@
+| Rule               | Best Practice Example       |
+| ------------------ | --------------------------- |
+| Semantic Elements  | `<nav>`, `<article>`        |
+| Class Naming       | `form-input`, `btn-primary` |
+| Case Style         | `kebab-case`                |
+| BEM                | `block__element--modifier`  |
+| Unique IDs         | `id="main-nav"`             |
+| Avoid Visual Names | ❌ `.blue-box` ✅ `.info-box` |
+| JS Hooks           | `data-*` attributes         |
