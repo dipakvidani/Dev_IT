@@ -71,8 +71,8 @@ function radioButtonEnable() {
 }
 
 // 7.Find a Diffrence Between 2 array with deatils like capital and small latter find with the use of includes() Method in js.
-const array1 = ["A", "B", "C", "D"];
-const array2 = ["a", "b", "c", "d"];
+const array1 = ["A", "B", "C", "D", "l"];
+const array2 = ["a", "b", "c", "d", "E"];
 
 const differenceElement = array1.filter(
   (item) => !array2.includes(item.toLowerCase())
@@ -89,24 +89,46 @@ document.getElementById("commonElements").innerText =
   "Common elements: " + commonElements.join(", ");
 
 // 9.Use a method of Find()method and Check Multiple Properties in js. //use pizza object
-const pizzas = [
-  { name: "Margherita", vegetarian: true, price: 8.99 },
-  { name: "Pepperoni", vegetarian: false, price: 9.99 },
-  { name: "Veggie Supreme", vegetarian: true, price: 10.99 },
-];
+// const pizzas = [
+//   { name: "Margherita", vegetarian: true, price: 8.99 },
+//   { name: "Pepperoni", vegetarian: false, price: 9.99 },
+//   { name: "Veggie Supreme", vegetarian: true, price: 10.99 },
+// ];
+let pizzas = [];
 
-function findPizzaByName(name) {
-  return pizzas.find(
+fetch("pizzaData.json")
+  .then((res) => res.json()) 
+  .then((data) => {
+    pizzas = data;
+    console.log("Inside .then:", pizzas);
+  })
+  .catch((err) => console.error("Error fetching pizza data:", err));
+
+console.log("Outside .then:", pizzas);
+
+async function findPizzaByName() {
+  let name = document.getElementById("pizzaNameInput").value;
+  let filteredPizza = await pizzas.find(
     (pizza) => pizza.name.toLowerCase() === name.toLowerCase()
   );
+
+  console.log("filteredPizza", filteredPizza);
+
+  document.getElementById("pizzaResult").innerText =
+    Object.entries(filteredPizza);
 }
 
 function findVegetarianPizzas() {
-  return pizzas.filter((pizza) => pizza.vegetarian);
+  document.getElementById("vegetarianPizzas").innerText = pizzas
+    .filter((pizza) => pizza.vegetarian)
+    .map((pizza) => `${pizza.name} :${pizza.price} `);
 }
 
-function findPizzaByPrice(maxPrice) {
-  return pizzas.filter((pizza) => pizza.price <= maxPrice);
+function findPizzaByPrice() {
+  let maxPrice = document.getElementById("maxPriceInput").value;
+  document.getElementById("pizzasByPrice").innerText = pizzas
+    .filter((pizza) => pizza.price <= maxPrice)
+    .map((pizza) => `${pizza.name} :${pizza.price} `);
 }
 
 // 10.Make a Deopdown Menu and Do Debounce In it in js.
@@ -160,7 +182,6 @@ function filterDropdown() {
   });
 }
 
-
 // 11.Use window.print() Method and give spacific Option in it in js.
 function printPage() {
   window.print();
@@ -184,5 +205,3 @@ function makeEditable() {
 // 13.Is There any Way to Make a editable without using JS.
 // Yes,
 // <div contenteditable="true">This text is editable.</div>
-
-

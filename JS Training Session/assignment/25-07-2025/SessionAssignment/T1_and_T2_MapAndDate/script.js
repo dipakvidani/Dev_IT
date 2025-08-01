@@ -88,6 +88,7 @@ let calculateDayLeft = document.getElementById("calculateDayLeft");
 
 datePikker.addEventListener("input", (e) => {
   let date = e.target.value;
+  // let toda
 
   console.log("date", date);
 
@@ -97,7 +98,7 @@ datePikker.addEventListener("input", (e) => {
   console.log(`dayLeft(${formattedDate}) : `, dayLeft(formattedDate));
 
   calculateDayLeft.innerText =
-    `dayLeft(${formattedDate}) :` + `${dayLeft(formattedDate)}`;
+    `Today's Date is ${new Date().getDate()} dayLeft(${formattedDate}) :` + `${dayLeft(formattedDate)}`;
 });
 
 

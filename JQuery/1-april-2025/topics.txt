@@ -1,0 +1,22 @@
+.wrap()      → Wrap each
+.wrapAll()   → Wrap all together
+.unwrap()    → Remove parent
+
+.append()    → Add inside (end)
+.prepend()   → Add inside (start)
+
+.before()    → Insert before
+.after()     → Insert after
+
+.addClass()     → Add class
+.removeClass()  → Remove class
+.toggleClass()  → Toggle class
+
+.each()     → Loop for effect (side-effect)
+.map()      → Loop for data extraction/transformation
+
+.get()          ->convetert jquery obj to native array
+jQuery(2)   [li,li]
+
+    length,
+    prevObject:jQuery.fn.init(1) [ul]

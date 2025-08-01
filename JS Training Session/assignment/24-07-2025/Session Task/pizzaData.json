@@ -1,0 +1,5 @@
+[
+  { "name": "Margherita", "vegetarian": true, "price": 8.99 },
+  { "name": "Pepperoni", "vegetarian": false, "price": 9.99 },
+  { "name": "Veggie Supreme", "vegetarian": true, "price": 10.99 }
+]

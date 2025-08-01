@@ -50,8 +50,6 @@
         </div>
 
 
-        // 4.Make a Dropdown Menu and Add deatils with JSON File add details in JSONfile that all you want to add in
-        dropDown.
 
         <div class="row my-5">
             <div class="col-md-12">
@@ -88,36 +86,17 @@
 
 
 
-
         <div class="row my-5">
             <div class="col-md-12">
                 <h2 class="text-center mb-4">Find Difference Between Arrays</h2>
                 <div id="arrayDifference" class="bg-dark text-light p-3 rounded"></div>
             </div>
-<!-- 
-            // 9.Use a method of Find()method and Check Multiple Properties in js. //use pizza object
-const pizzas = [
-  { name: "Margherita", vegetarian: true, price: 8.99 },
-  { name: "Pepperoni", vegetarian: false, price: 9.99 },
-  { name: "Veggie Supreme", vegetarian: true, price: 10.99 },
-];
 
-function findPizzaByName(name) {
-  return pizzas.find(pizza => pizza.name.toLowerCase() === name.toLowerCase());
-}
-
-function findVegetarianPizzas() {
-  return pizzas.filter(pizza => pizza.vegetarian);
-}
-
-function findPizzaByPrice(maxPrice) {
-  return pizzas.filter(pizza => pizza.price <= maxPrice);
-} -->
         <div class="row my-5">
             <div class="col-md-12">
                 <h2 class="text-center mb-4">Find Pizza by Name</h2>
                 <input type="text" id="pizzaNameInput" class="form-control mb-3" placeholder="Enter pizza name">
-                <button class="btn btn-primary" onclick="findPizza()">Find Pizza</button>
+                <button class="btn btn-primary" onclick="findPizzaByName()">Find Pizza</button>
                 <div id="pizzaResult" class="bg-dark text-light p-3 rounded mt-3"></div>
             </div>
         </div>
@@ -134,7 +113,7 @@ function findPizzaByPrice(maxPrice) {
             <div class="col-md-12">
                 <h2 class="text-center mb-4">Find Pizzas by Price</h2>
                 <input type="number" id="maxPriceInput" class="form-control mb-3" placeholder="Enter max price">
-                <button class="btn btn-primary" onclick="findPizzasByPrice()">Find Pizzas</button>
+                <button class="btn btn-primary" onclick="findPizzaByPrice()">Find Pizzas</button>
                 <div id="pizzasByPrice" class="bg-dark text-light p-3 rounded mt-3"></div>
             </div>
         </div>
