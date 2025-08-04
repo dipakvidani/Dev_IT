@@ -1,0 +1,18 @@
+1. Create a dropdown menu with 3-5 options (e.g., colors or cities).
+ - Use the .change() event to show an alert with the selected value.
+ 
+2. Design a button that shows an alert only once, no matter how many times it is clicked.
+ - (Hint: Use the .one() method)
+ 
+3. Add three mouse events (mouseenter, mouseleave, click) to a square box (<div>).
+ - On hover, change the color.
+ - On mouse leave, revert the color.
+ - On click, show an alert.
+ 
+4. Create 3 dynamic buttons using jQuery (append them to a container).
+ - Use event delegation to handle click events on those buttons.
+ - (Hint: Use .on() with a static parent element)
+ 
+5. Create a link (<a>) that opens Google, but use event.preventDefault() to stop the redirection.
+ - Show an alert saying “Link blocked!” instead.
+ 

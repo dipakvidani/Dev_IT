@@ -29,7 +29,9 @@
 
         let output = "";
 
-        $.map(users, (user, index) => {
+        let userObj=JSON.parse(JSON.stringify(users))
+
+        $.map(userObj, (user, index) => {
           //  $("#json-result").append(user.name + " is " + user.age + " years old")
           output += `${user.name} is ${user.age} years old. <p></p>`;
         });

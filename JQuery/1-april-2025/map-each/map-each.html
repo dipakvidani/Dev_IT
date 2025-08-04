@@ -83,7 +83,7 @@
         $("#btn-print-map").on("click", () => {
           $('li').map((idx,ele)=>{
             let liText=$(ele).text();
-            $("#div-map--content").append(`<p class='text-center text-capitalize bg-danger-subtle text-info'>li ${idx+1} : ${liText}</p>`)
+            $("#div-map--content").append(`<p class='text-center text-capitalize bg-danger-subtle text-info fw-bold fs-5'>li ${idx+1} : ${liText}</p>`)
           })
         });
       });
