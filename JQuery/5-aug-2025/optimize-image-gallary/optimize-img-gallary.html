@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Optimize Image Gallary</title>
+    <!-- Bootstrap css link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <!-- jQuery cdn link  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      li {
+        height: 150px !important;
+        width: 250px;
+      }
+      li > img {
+        height: 100%;
+        width: 100%;
+        border-radius: 1.1rem;
+        border: 3px solid black;
+        opacity: 0.4;
+      }
+      figure > img {
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <h1 class="text-center fw-bold">jQuery Image Gallery</h1>
+
+    <div
+      class="toolbox d-flex flex-column justify-content-center align-items-center"
+    >
+      <label
+        >Select Effect :
+        <select id="imgEffect">
+          <option value="Fade">Fade</option>
+          <option value="Slide">Slide</option>
+        </select></label
+      >
+      <label
+        >Time in seconds:
+        <select id="imgDuration">
+          <option value="0.5">0.5</option>
+          <option value="1">1</option>
+          <option value="1.5">1.5</option>
+          <option value="2">2</option>
+          <option value="2.5">2.5</option>
+          <option value="3">3</option>
+        </select></label
+      >
+      <button id="btnEnlarge" type="button" class="w-auto btn btn-primary">
+        +
+      </button>
+      <button id="btnShrink" type="button" class="w-auto btn btn-primary my-3">
+        -
+      </button>
+    </div>
+    <div id="div-img-container">
+      <figure id="main-img" class="d-flex justify-content-center">
+        <img
+          src="https://images.unsplash.com/photo-1546587348-d12660c30c50?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyYWx8ZW58MHx8MHx8fDA%3D"
+          alt="main-img"
+          class="rounded-5 shadow-lg w-50"
+          id="img-main"
+        />
+      </figure>
+      <ul
+        id="img-gallary-preview"
+        class="list-unstyled d-flex justify-content-center gap-2 mt-4"
+      >
+        <li>
+          <img
+            src="https://images.unsplash.com/photo-1546587348-d12660c30c50?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyYWx8ZW58MHx8MHx8fDA%3D"
+            alt="li-img1"
+          />
+        </li>
+        <li>
+          <img
+            src="https://images.unsplash.com/photo-1539667468225-eebb663053e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fG5hdHVyYWx8ZW58MHx8MHx8fDA%3D"
+            alt="li-img1"
+          />
+        </li>
+        <li>
+          <img
+            src="https://images.unsplash.com/photo-1628528927580-6a49765ff0da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fG5hdHVyYWx8ZW58MHx8MHx8fDA%3D"
+            alt="li-img1"
+          />
+        </li>
+        <li>
+          <img
+            src="https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fG5hdHVyYWx8ZW58MHx8MHx8fDA%3D"
+            alt="li-img1"
+          />
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      $("document").ready(function () {
+        $("#img-gallary-preview img").on({
+          //click
+          click: function () {
+            let imgUrl = $(this).attr("src");
+            console.log("imgUrl :", imgUrl);
+
+            let effect = $("#imgEffect").val();
+            console.log("effect :", effect);
+
+            let imgDuration = $("#imgDuration").val() * 1000;
+            console.log("imgDuration :", imgDuration);
+
+            if (effect == "Fade") {
+              $("#img-main")
+                .fadeOut(imgDuration, function () {
+                  $(this).attr("src", imgUrl);
+                })
+                .fadeIn(imgDuration);
+            } else {
+              $("#img-main")
+                .slideUp(imgDuration, function () {
+                  $(this).attr("src", imgUrl);
+                })
+                .slideDown(imgDuration);
+            }
+          },
+          //mouse on
+          mouseover: function () {
+            // console.log("mouse Over");
+            $(this).css({ opacity: 1 });
+          },
+          // mouse out
+          mouseout: function () {
+            // console.log("mouse Out");
+            $(this).css({ opacity: 0.4 });
+          },
+        });
+        $("#btnEnlarge").on("click", function () {
+          $("#img-main").animate({ width: "+=50px", height: "+=50px" }, 50);
+        });
+        $("#btnShrink").on("click", function () {
+          $("#img-main").animate({ width: "-=50px", height: "-=50px" }, 50);
+        });
+      });
+    </script>
+
+    <!-- Bootstrap cdn Link  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
